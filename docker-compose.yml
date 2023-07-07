@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  tourist:
+    image: tourist
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8001:8001
+    volumes:
+      - ./tourist:/app:cached
