@@ -37,3 +37,15 @@ class FlagViewSet(viewsets.ModelViewSet):
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
+
+
+from django.shortcuts import render, get_object_or_404
+
+
+def message_list(request):
+    messages = Message.objects.all()[:100]  # получите первые 100 сообщений
+    return render(request, 'message_list.html', {'messages': messages})
+
+def message_detail(request, message_id):
+    message = get_object_or_404(Message, telegram_id=message_id)
+    return render(request, 'message_detail.html', {'message': message})

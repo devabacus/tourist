@@ -17,11 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from touristapp.views import home
-
+from touristapp.views import *
 
 urlpatterns = [
-    path('', home, name='home'),
+    # path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/', include('touristapp.urls')),
-    
+    path('', message_list, name="message_list")
 ]
