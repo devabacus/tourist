@@ -9,7 +9,7 @@
         {% for message in messages %}
             <li>
                 <a href="{% url 'message_detail' message.telegram_id %}">
-                    {{ message.message|truncatechars:100 }}
+                    {{message.date}}  {{ message.message|truncatechars:100 }}
                 </a>
             </li>
         {% endfor %}

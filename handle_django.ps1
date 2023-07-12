@@ -7,7 +7,7 @@ cd tourist
 
 python manage.py startapp touristapp
 python manage.py migrate
-python manage.py runserver Localhost:8001
+python manage.py runserver Localhost:8000
 cd touristapp
 
 docker compose up --build
